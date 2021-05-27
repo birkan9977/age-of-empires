@@ -1,4 +1,3 @@
 ### Assignment
 
 Assignment for Adesso
-
