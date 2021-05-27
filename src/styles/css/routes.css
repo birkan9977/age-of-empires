@@ -1,29 +1,36 @@
 .adsp-01__navbar {
-  height: 6.25rem;
+  height: 5.625rem;
   background-color: #c78836;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .adsp-01__navbar ul {
   display: flex;
-  background-color: antiquewhite;
+  background-color: #e9cfad;
   justify-content: flex-end;
+  width: 100%;
+  height: 4.5rem;
 }
 .adsp-01__navbar li {
   list-style: none;
-  padding: 0 1.875rem;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .adsp-01__navbar a {
-  text-decoration: none;
+  padding: 0 0.3125rem;
 }
 
 .adsp-01__active {
-  color: #e61414;
+  color: #31853c;
 }
 
 .adsp-01__path {
-  color: #39885c;
+  color: black;
 }
 
 /*# sourceMappingURL=routes.css.map */

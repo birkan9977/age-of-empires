@@ -1,0 +1,15 @@
+.adsp-01__home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.adsp-01__home .adsp-01__image-container {
+  border: none;
+  padding: 10px;
+}
+.adsp-01__home img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=home.css.map */

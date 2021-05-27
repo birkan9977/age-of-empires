@@ -3,4 +3,25 @@
   flex-direction: column;
 }
 
+.adsp-01__footer {
+  margin: 3.125rem 0;
+  padding: 0.625rem 0;
+  background-color: #c78836;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.adsp-01__footer-inside {
+  width: 100%;
+  padding: 0.3125rem 0;
+  color: rgba(46, 44, 44, 0.8);
+  background-color: #e9cfad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /*# sourceMappingURL=layout.css.map */

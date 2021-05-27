@@ -33,6 +33,23 @@ body {
   background: $app-white;
 }
 
+h1{
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: pixelToRem(20) 0;
+}
+
+a {
+  text-decoration: none;
+  color:$nav-link-color;
+  transition: all 0.3s ease;
+  &:active,&link{
+    color:$nav-link-color;
+  }
+  &:hover{
+    color:lighten($nav-link-color,25%);
+  }
+}
 /*
 we use a prefix unique to our project to make sure the class names would not clash with other class names to be added later with third party libraries such as bootstrap or material ui
 
@@ -51,3 +68,7 @@ usage: '.#{$prefix}<className>'
   max-width: pixelToRem($breakpoint-xl)-$container-margin;
   padding: 10px 0;
 }
+
+
+
+
