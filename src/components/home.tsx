@@ -1,4 +1,4 @@
-import homeImage from '../assets/home-image.jpg'
+import homeImage from "../assets/home-image.jpg";
 import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../utils/class-prefix";
 import "../styles/css/home.css";
@@ -8,7 +8,7 @@ const Home = () => {
     <div className={cn("home")}>
       <h1>Home Page</h1>
       <div className={cn("image-container")}>
-      <img src={homeImage} alt="age of empires cover"></img>
+        <img src={homeImage} alt="age of empires cover"></img>
       </div>
     </div>
   );

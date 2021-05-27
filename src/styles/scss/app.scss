@@ -33,7 +33,7 @@ body {
   background: $app-white;
 }
 
-h1{
+h1 {
   font-weight: 400;
   font-size: 2.5rem;
   margin: pixelToRem(20) 0;
@@ -41,13 +41,14 @@ h1{
 
 a {
   text-decoration: none;
-  color:$nav-link-color;
+  color: $nav-link-color;
   transition: all 0.3s ease;
-  &:active,&link{
-    color:$nav-link-color;
+  &:active,
+  &link {
+    color: $nav-link-color;
   }
-  &:hover{
-    color:lighten($nav-link-color,25%);
+  &:hover {
+    color: lighten($nav-link-color, 25%);
   }
 }
 /*
@@ -68,7 +69,3 @@ usage: '.#{$prefix}<className>'
   max-width: pixelToRem($breakpoint-xl)-$container-margin;
   padding: 10px 0;
 }
-
-
-
-

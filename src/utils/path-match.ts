@@ -1,4 +1,4 @@
-const pathMatch = (path:string, windowLocation:string):boolean => {
+const pathMatch = (path: string, windowLocation: string): boolean => {
   //console.log("PATH", path);
   //console.log("windowLocation", windowLocation);
 

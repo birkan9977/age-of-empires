@@ -2,28 +2,25 @@
 
 Assignment for Adesso
 
-
 ## Development koşulları:
 
-  - Proje React son sürümü ile geliştirilecek
-  - Tüm data Redux - saga ile yönetilecek.
-  - Router kullanılacak.
-  - Stil olarak herhangi bir library kullanılabilir.
-  - Stil dili olarak scss kullanılacak.
-  - Tslint / Eslint kullanılacak (default kuralları geçmesi yeterli)
-  - %80 test coverage olacak.
+- Proje React son sürümü ile geliştirilecek
+- Tüm data Redux - saga ile yönetilecek.
+- Router kullanılacak.
+- Stil olarak herhangi bir library kullanılabilir.
+- Stil dili olarak scss kullanılacak.
+- Tslint / Eslint kullanılacak (default kuralları geçmesi yeterli)
+- %80 test coverage olacak.
 
 ### Sayfalar:
 
-  - Anasayfa
-  - Birimler sayfası
-  - Birim detay sayfası
+- Anasayfa
+- Birimler sayfası
+- Birim detay sayfası
 
 ### Anasayfa
 
 - Kullanıcı anasayfada sadece bir resim görecek. İstediğiniz bir resmi kullanabilirsiniz. Sağ üst köşede mockup’ta görünen linkler olacak.
-
- 
 
 ### Birimler Sayfası
 
@@ -34,8 +31,6 @@ Assignment for Adesso
 - Birimler listesinin üzerinde filtreleme alanları olacak.
 
 - İki tür filtreleme olacak. Filtreler combine edilebilecek.
-
- 
 
 ### Ages Filtresi:
 
@@ -48,8 +43,6 @@ Assignment for Adesso
 - Kullanıcı isterse “All” opsiyonunu seçip minimum çağ gereksinimini kaldırıp tüm birimleri listeletebilir.
 
 - Varsayılan olarak “All” opsiyonu seçili gelecek.
-
- 
 
 ### Costs Filtresi:
 
@@ -69,8 +62,6 @@ Assignment for Adesso
 
 - Cost aralığı; minimum 0, maksimum 200 olmalıdır.
 
- 
-
 ### Liste:
 
 - Birimler bir tabloda listelenecek.
@@ -78,8 +69,6 @@ Assignment for Adesso
 - Kullanıcının değiştirdiği filtrelere göre liste anlık güncellenecek.
 
 - Kullanıcı listedeki bir birime tıkladığında üzerine tıkladığı birimin detay sayfasına yönlendirilecek.
-
- 
 
 ### Birim Detay Sayfası
 

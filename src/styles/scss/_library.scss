@@ -10,9 +10,9 @@ $font-primary: $fonts;
 $font-size: 16px !default;
 $container-margin: 2rem; //from both sides
 $bars-background-color: rgb(199, 136, 54);
-$navbar-background-color: lighten($bars-background-color,30%);;
-$nav-link-color: darken($bars-background-color,40%);
-$active-link-color:rgb(49, 133, 60);
+$navbar-background-color: lighten($bars-background-color, 30%);
+$nav-link-color: darken($bars-background-color, 40%);
+$active-link-color: rgb(49, 133, 60);
 //break points for responsive layouts in pixel
 $breakpoint-xs: 0;
 $breakpoint-sm: 576;
@@ -28,13 +28,12 @@ $prefix: "adsp-01__";
   @return $pixelValue/16 * 1rem;
 }
 
-@function adjust($oldValue,$percentage){
-  @return $oldValue *  $percentage / 100
+@function adjust($oldValue, $percentage) {
+  @return $oldValue * $percentage / 100;
 }
-@mixin flex-column ($horizontal,$vertical){
+@mixin flex-column($horizontal, $vertical) {
   display: flex;
   flex-direction: column;
   justify-content: $vertical;
   align-items: $horizontal;
 }
-

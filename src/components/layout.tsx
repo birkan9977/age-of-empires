@@ -31,9 +31,13 @@ const Layout = () => {
       <footer className={cn("footer")}>
         <div className={cn("footer-inside")}>
           <small>Designed by Birkan Bilici </small>
-          <small><a href="https://github.com/birkan9977/misc" target='blank'>Github Link</a></small>
+          <small>
+            <a href="https://github.com/birkan9977/misc" target="blank">
+              Github Link
+            </a>
+          </small>
           <small>project assignment for Adesso </small>
-          </div>
+        </div>
       </footer>
     </div>
   );
