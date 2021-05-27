@@ -2,6 +2,7 @@
 @import "./library";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
+// adsp-01 class prefix for the project
 * {
   margin: 0;
   padding: 0;
@@ -30,4 +31,23 @@ body {
   color: $app-black;
   background: $app-white-fallback;
   background: $app-white;
+}
+
+/*
+we use a prefix unique to our project to make sure the class names would not clash with other class names to be added later with third party libraries such as bootstrap or material ui
+
+!!!In order to change the class prefix, modify both 'src/utils/class-prefix.js' and 'src/styles/_library.scss'!!!
+usage: '.#{$prefix}<className>'
+*/
+
+.#{$prefix}main {
+  display: block;
+  margin: 0;
+}
+
+.#{$prefix}app-container {
+  display: block;
+  margin: auto;
+  max-width: pixelToRem($breakpoint-xl)-$container-margin;
+  padding: 10px 0;
 }

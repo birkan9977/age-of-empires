@@ -1,35 +1,18 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Home from "./components/home";
-import Units from "./components/units";
+import classnames from "@umbrellio/prefix-classnames";
+import { classPrefix as prefix } from "./utils/class-prefix";
+import Layout from "./components/layout";
+import "./styles/css/app.css";
 
-function App() {
+const cn = classnames(`${prefix}`);
+
+const App = () => {
   return (
-    <div className="App">
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/units">Units</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Switch>
-            <Route path="/units">
-              <Units />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+    <div className={cn("main")}>
+      <div className={cn("app-container")}>
+        <Layout />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

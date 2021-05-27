@@ -103,4 +103,22 @@ body {
   background: rgba(240, 245, 245, 0.8);
 }
 
+/*
+we use a prefix unique to our project to make sure the class names would not clash with other class names to be added later with third party libraries such as bootstrap or material ui
+
+!!!In order to change the class prefix, modify both 'src/utils/class-prefix.js' and 'src/styles/_library.scss'!!!
+usage: '.adsp-01__<className>'
+*/
+.adsp-01__main {
+  display: block;
+  margin: 0;
+}
+
+.adsp-01__app-container {
+  display: block;
+  margin: auto;
+  max-width: 73rem;
+  padding: 10px 0;
+}
+
 /*# sourceMappingURL=app.css.map */

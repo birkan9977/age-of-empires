@@ -1,0 +1,6 @@
+@import "./library";
+
+.#{$prefix}layout-container {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,29 @@
+.adsp-01__navbar {
+  height: 6.25rem;
+  background-color: #c78836;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.adsp-01__navbar ul {
+  display: flex;
+  background-color: antiquewhite;
+  justify-content: flex-end;
+}
+.adsp-01__navbar li {
+  list-style: none;
+  padding: 0 1.875rem;
+}
+.adsp-01__navbar a {
+  text-decoration: none;
+}
+
+.adsp-01__active {
+  color: #e61414;
+}
+
+.adsp-01__path {
+  color: #39885c;
+}
+
+/*# sourceMappingURL=routes.css.map */

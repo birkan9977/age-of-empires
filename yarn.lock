@@ -2045,6 +2045,13 @@
     "@typescript-eslint/types" "4.25.0"
     eslint-visitor-keys "^2.0.0"
 
+"@umbrellio/prefix-classnames@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@umbrellio/prefix-classnames/-/prefix-classnames-1.0.2.tgz#9505f7f4c65dcc5990f91b666e425a8142a11a07"
+  integrity sha512-AS4iqpQELLXxkP5qvpJ3PuhafHaRCe5GZJ+CsBnRVThWVqiWTmJzSuGhYZ19Kox+fLc2+g86qFgq1qWuiBYnOg==
+  dependencies:
+    classnames "^2.2.6"
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"
@@ -3293,6 +3300,11 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+classnames@^2.2.6:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
 clean-css@^4.2.3:
   version "4.2.3"

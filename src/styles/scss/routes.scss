@@ -1,0 +1,30 @@
+@import "./library";
+
+.#{$prefix}navbar {
+  height: pixelToRem(100);
+  background-color: rgb(199, 136, 54);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  ul {
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: flex-end;
+  }
+
+  li {
+    list-style: none;
+    padding: 0 pixelToRem(30);
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.#{$prefix}active {
+  color: rgb(230, 20, 20);
+}
+.#{$prefix}path {
+  color: rgb(57, 136, 92);
+}

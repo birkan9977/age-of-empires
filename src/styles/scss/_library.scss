@@ -8,3 +8,19 @@ $app-black: rgba(rgb(46, 44, 44), 0.8);
 $app-black-fallback: #000;
 $font-primary: $fonts;
 $font-size: 16px !default;
+$container-margin: 2rem; //from both sides
+
+//break points for responsive layouts in pixel
+$breakpoint-xs: 0;
+$breakpoint-sm: 576;
+$breakpoint-md: 768;
+$breakpoint-lg: 992;
+$breakpoint-xl: 1200;
+
+//class prefix for the project
+//make sure $prefix has same value with classPrefix export in 'utils/class-prefix.js'
+$prefix: "adsp-01__";
+
+@function pixelToRem($pixelValue) {
+  @return $pixelValue/16 * 1rem;
+}
