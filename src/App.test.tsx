@@ -28,7 +28,7 @@ describe("Redux Filter Tests", function () {
             { name: "food", amount: 20, enabled: false },
             { name: "gold", amount: 20, enabled: false },
           ],
-        } as State,
+        },
       },
       {
         type: "CHANGE_AGE_FILTER",
@@ -43,7 +43,7 @@ describe("Redux Filter Tests", function () {
           { name: "food", amount: 20, enabled: false },
           { name: "gold", amount: 20, enabled: false },
         ],
-      } as State,
+      },
     });
   });
 
@@ -57,7 +57,7 @@ describe("Redux Filter Tests", function () {
             { name: "food", amount: 20, enabled: false },
             { name: "gold", amount: 20, enabled: false },
           ],
-        } as State,
+        },
       },
       {
         type: "CHANGE_COST_FILTER",
@@ -76,7 +76,7 @@ describe("Redux Filter Tests", function () {
           { name: "food", amount: 20, enabled: false },
           { name: "gold", amount: 20, enabled: false },
         ],
-      } as State,
+      },
     });
   });
 });

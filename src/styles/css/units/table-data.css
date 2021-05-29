@@ -1,0 +1,39 @@
+.adsp-01__table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.adsp-01__records-number-text {
+  padding: 15px;
+}
+
+.adsp-01__table {
+  height: 400px;
+  width: 800px;
+}
+
+.MuiDataGrid-row {
+  cursor: pointer;
+}
+
+.MuiDataGrid-cell,
+.Mui-selected {
+  border: none !important;
+  outline: none !important;
+}
+
+.MuiDataGrid-cell {
+  padding: 0 20px !important;
+}
+
+.MuiDataGrid-columnHeader {
+  padding: 0 20px !important;
+}
+
+/*# sourceMappingURL=table-data.css.map */

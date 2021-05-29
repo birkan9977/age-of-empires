@@ -4,6 +4,7 @@
 .#{$prefix}ages {
   width: 100%;
   margin-bottom: pixelToRem(30);
+  margin-left: $left-margin;
 }
 
 .#{$prefix}ages-options-container {

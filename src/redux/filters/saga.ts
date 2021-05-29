@@ -1,9 +1,11 @@
-import { all, call, fork, takeEvery, select } from "redux-saga/effects";
+import { all, call, fork, takeEvery, select, put } from "redux-saga/effects";
 import { CHANGE_AGE_FILTER, CHANGE_COST_FILTER } from "../action-types";
 import { FilterAction } from "../../types/general-types";
 import getData from "../../services/service";
 import filterData from "../../services/filter-data";
 import { getFiltersState } from "../selectors";
+import { updateData } from "../data/actions";
+
 function* fetchData(action: FilterAction) {
   //yield console.log("GEN PAYLOAD UPDATED for FETCH", action);
   //simulate an api call with delay in milliseconds
@@ -16,7 +18,8 @@ function* fetchData(action: FilterAction) {
   const currentFiltersState = yield select(getFiltersState);
   //yield console.log('state',currentState)
   const filteredData = yield call(filterData, loadedData, currentFiltersState);
-  //yield console.log(filteredData);
+  yield console.log(filteredData);
+  yield put(updateData(filteredData));
 }
 
 export function* watchChangeAge(): any {

@@ -4,8 +4,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0 50px;
+  width: 100%;
 }
 .adsp-01__units h1 {
+  align-self: center;
+}
+.adsp-01__units .adsp-01__data-container {
   align-self: center;
 }
 

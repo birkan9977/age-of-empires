@@ -9,5 +9,9 @@ export interface Cost {
   enabled: boolean;
 }
 
-export type State = { age?: {} | Age | null; cost?: {} | Cost[] | null };
+export type State = {
+  age?: {} | Age | null;
+  cost?: {} | Cost[] | null;
+  data?: {} | null;
+};
 export type FilterAction = { type: string; payload: {} | Age | Cost };

@@ -3,7 +3,7 @@ import { classPrefix as prefix } from "../utils/class-prefix";
 import "../styles/css/units.css";
 import AgesFilter from "./units/ages-filter";
 import CostsFilter from "./units/costs-filter";
-
+import DataTable from "./units/table";
 const cn = classnames(`${prefix}`);
 
 const Units = () => {
@@ -15,6 +15,9 @@ const Units = () => {
       </div>
       <div id="costs-filter">
         <CostsFilter />
+      </div>
+      <div id="data-table" className={cn("data-container")}>
+        <DataTable />
       </div>
     </div>
   );

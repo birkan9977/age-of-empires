@@ -3,6 +3,7 @@
 //costs filter
 .#{$prefix}costs {
   width: 100%;
+  margin-left: $left-margin;
 }
 
 .#{$prefix}costs-options-container {
