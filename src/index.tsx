@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { configureStore } from "./redux/store";
-import { initialState } from "./data/initial-state";
 
 ReactDOM.render(
   <React.StrictMode>

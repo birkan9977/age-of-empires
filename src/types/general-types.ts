@@ -10,4 +10,4 @@ export interface Cost {
 }
 
 export type State = { age?: {} | Age | null; cost?: {} | Cost[] | null };
-export type filterAction = { type: string; payload: {} | Age | Cost };
+export type FilterAction = { type: string; payload: {} | Age | Cost };
