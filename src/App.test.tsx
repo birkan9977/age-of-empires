@@ -20,7 +20,7 @@ describe("Page Tests", function () {
 describe("Redux Filter Tests", function () {
   test("age filter", () => {
     let state = reducers(
-      {
+      { dataReducer:{},
         filterReducer: {
           age: { title: "All", selectionIndex: 0 },
           cost: [
@@ -28,7 +28,7 @@ describe("Redux Filter Tests", function () {
             { name: "food", amount: 20, enabled: false },
             { name: "gold", amount: 20, enabled: false },
           ],
-        },
+        } as State,
       },
       {
         type: "CHANGE_AGE_FILTER",
@@ -36,6 +36,7 @@ describe("Redux Filter Tests", function () {
       }
     );
     expect(state).toEqual({
+      dataReducer:{},
       filterReducer: {
         age: { title: "Castle", selectionIndex: 3 },
         cost: [
@@ -43,13 +44,13 @@ describe("Redux Filter Tests", function () {
           { name: "food", amount: 20, enabled: false },
           { name: "gold", amount: 20, enabled: false },
         ],
-      },
+      } as State,
     });
   });
 
   test("cost filter", () => {
     let state = reducers(
-      {
+      { dataReducer:{},
         filterReducer: {
           age: { title: "All", selectionIndex: 0 },
           cost: [
@@ -57,7 +58,7 @@ describe("Redux Filter Tests", function () {
             { name: "food", amount: 20, enabled: false },
             { name: "gold", amount: 20, enabled: false },
           ],
-        },
+        } as State,
       },
       {
         type: "CHANGE_COST_FILTER",
@@ -69,6 +70,7 @@ describe("Redux Filter Tests", function () {
       }
     );
     expect(state).toEqual({
+      dataReducer:{},
       filterReducer: {
         age: { title: "All", selectionIndex: 0 },
         cost: [
@@ -76,7 +78,7 @@ describe("Redux Filter Tests", function () {
           { name: "food", amount: 20, enabled: false },
           { name: "gold", amount: 20, enabled: false },
         ],
-      },
+      } as State,
     });
   });
 });

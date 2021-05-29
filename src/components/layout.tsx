@@ -32,7 +32,7 @@ const Layout = () => {
         <div className={cn("footer-inside")}>
           <small>Designed by Birkan Bilici </small>
           <small>
-            <a href="https://github.com/birkan9977/misc" target="blank">
+            <a href="https://github.com/birkan9977" target="blank">
               Github Link
             </a>
           </small>
