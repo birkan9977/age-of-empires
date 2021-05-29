@@ -17,7 +17,7 @@ describe("Page Tests", function () {
   });
 });
 
-describe("Redux Tests", function () {
+describe("Redux Filter Tests", function () {
   test("age filter", () => {
     let state = reducers(
       {
