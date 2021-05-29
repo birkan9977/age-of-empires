@@ -11,7 +11,8 @@ import Checkbox, { CheckboxProps } from "@material-ui/core/Checkbox";
 import Slider from "@material-ui/core/Slider";
 import { findParentId } from "../../utils/helper-functions";
 import { changeCostsFilter } from "../../redux/filters/actions";
-import { initialState } from "../../data/initial-state";
+import { Cost } from "../../types/general-types";
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -24,16 +25,23 @@ const GreenCheckbox = withStyles({
 
 const cn = classnames(`${prefix}`);
 
-const CostsFilter = (props) => {
+type Prop = {
+  cost?: Cost | any;
+  changeCostsFilter?: { type: string; payload: {} } | any;
+};
+
+const CostsFilter = (props: Prop): JSX.Element => {
+  const { cost, changeCostsFilter } = props;
+
   const [state, setState] = useState({
-    wood: props.cost[0].enabled || false,
-    food: props.cost[1].enabled || false,
-    gold: props.cost[2].enabled || false,
+    wood: cost[0].enabled || false,
+    food: cost[1].enabled || false,
+    gold: cost[2].enabled || false,
   });
   const [sliderValues, setSliderValues] = useState({
-    wood: props.cost[0].amount || 0,
-    food: props.cost[1].amount || 0,
-    gold: props.cost[2].amount || 0,
+    wood: cost[0].amount || 0,
+    food: cost[1].amount || 0,
+    gold: cost[2].amount || 0,
   });
 
   const handleCheckBoxChange = (
@@ -50,11 +58,11 @@ const CostsFilter = (props) => {
         //therefore we find the parent node for identifying the slider id.
         const id: string = findParentId(event, "slider-context");
         //console.log("found-slider-div-id", id);
-        const index = id.indexOf("slider-context");
-        const refinedId = id.substring(0, index - 1);
+        const index: number = id.indexOf("slider-context");
+        const refinedId: string = id.substring(0, index - 1);
         //console.log(refinedId);
         const regex = new RegExp(`(^wood$)|(^food$)|(^gold$)`, "g");
-        const found = refinedId.search(regex) > -1;
+        const found: boolean = refinedId.search(regex) > -1;
         if (found) {
           setSliderValues({ ...sliderValues, [refinedId]: newValue });
         }
@@ -69,19 +77,22 @@ const CostsFilter = (props) => {
   };
 
   const updateDataforRedux = () => {
-    const costDataForRedux = costsData.map((item, index) => {
-      return {
-        name: item.name,
-        amount: sliderValues[item.name],
-        enabled: state[item.name],
-      };
-    });
+    const costDataForRedux = costsData.map(
+      (item): Cost => {
+        return {
+          name: item.name,
+          amount: sliderValues[item.name],
+          enabled: state[item.name],
+        };
+      }
+    );
     //console.log("redux data", costDataForRedux);
-    props.changeCostsFilter(costDataForRedux);
+    changeCostsFilter(costDataForRedux);
   };
 
   useEffect(() => {
     updateDataforRedux();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
   return (
@@ -142,7 +153,7 @@ const CostsFilter = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const { cost } = state.filters;
+  const { cost } = state.filterReducer;
   return { cost };
 };
 

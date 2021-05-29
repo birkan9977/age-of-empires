@@ -6,20 +6,28 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import { agesData as ages } from "../../data/ages-data";
 import { changeAgeFilter } from "../../redux/filters/actions";
 import { connect } from "react-redux";
+import { Age } from "../../types/general-types";
 
 const cn = classnames(`${prefix}`);
 const debug = false;
 
-const AgesFilter = (props) => {
+type Prop = {
+  age?: Age | any;
+  changeAgeFilter?: { type: string; payload: {} } | any;
+};
+
+const AgesFilter = (props: Prop): JSX.Element => {
+  const { age, changeAgeFilter } = props;
+
   return (
     <div className={cn("ages")}>
       <h2>Ages</h2>
       <div className={cn("ages-options-container")}>
         <BottomNavigation
-          value={props.age.selectionIndex ?? 0}
+          value={age.selectionIndex ?? 0}
           onChange={(event, newValue) => {
             //setValue(newValue);
-            props.changeAgeFilter(ages[newValue]);
+            changeAgeFilter(ages[newValue]);
           }}
           showLabels
         >
@@ -33,14 +41,14 @@ const AgesFilter = (props) => {
             );
           })}
         </BottomNavigation>
-        {debug && <div>AGE {props.age.title}</div>}
+        {debug && <div>AGE {age.title}</div>}
       </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  const { age } = state.filters;
+  const { age } = state.filterReducer;
   return { age };
 };
 

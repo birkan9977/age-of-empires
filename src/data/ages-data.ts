@@ -1,4 +1,9 @@
-export const agesData = [
+type AgesData = {
+  title: string;
+  selectionIndex: number;
+};
+
+export const agesData: AgesData[] = [
   {
     title: "All",
     selectionIndex: 0,

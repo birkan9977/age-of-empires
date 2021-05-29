@@ -9,7 +9,7 @@ import { initialState } from "./data/initial-state";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={configureStore(initialState)}>
+    <Provider store={configureStore()}>
       <App />
     </Provider>
   </React.StrictMode>,
