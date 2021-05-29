@@ -1,6 +1,4 @@
-import type { Age } from "../types/general-types";
-
-export const agesData: ReadonlyArray<Age> = [
+export const agesData = [
   {
     title: "All",
     selectionIndex: 0,

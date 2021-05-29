@@ -109,6 +109,12 @@ h1 {
   margin: 1.25rem 0;
 }
 
+h2 {
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin: 1.25rem 0;
+}
+
 a {
   text-decoration: none;
   color: #271a0a;
@@ -119,7 +125,7 @@ alink {
   color: #271a0a;
 }
 a:hover {
-  color: #8b5f26;
+  color: #389844;
 }
 
 /*

@@ -1,0 +1,53 @@
+.adsp-01__costs {
+  width: 100%;
+}
+
+.adsp-01__costs-options-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.adsp-01__wood-option-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
+  background-color: antiquewhite;
+}
+
+.adsp-01__row {
+  display: flex;
+}
+
+.adsp-01__column {
+  display: block;
+}
+
+.adsp-01__checkbox-column {
+  width: 100px;
+}
+
+.adsp-01__slider-column {
+  position: relative;
+  width: 250px;
+}
+
+.adsp-01__slider {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  width: 230px;
+}
+
+.adsp-01__slider-label {
+  position: relative;
+  top: 7px;
+  left: 20px;
+  width: 50px;
+  cursor: default;
+}
+
+/*# sourceMappingURL=costs-filter.css.map */

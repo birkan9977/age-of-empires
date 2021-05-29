@@ -1,35 +1,11 @@
 @import "./library";
 
 .#{$prefix}units {
-  @include flex-column(center, flex-start);
-  height: 500px;
-  padding: 0 50px;
-}
-
-.#{$prefix}ages {
-  width: 100%;
-}
-
-.#{$prefix}ages-options-container {
-  height: 30px;
-  .MuiBottomNavigation-root {
-    border: 1px solid lighten($nav-link-color, 70%);
-    .#{$prefix}age-options {
-      border-right: solid 1px lighten($nav-link-color, 70%);
-    }
-
-    :last-child {
-      border-right: none;
-    }
-  }
-
   @include flex-column(flex-start, flex-start);
-  .MuiBottomNavigationAction-label {
-    font-size: pixelToRem(15) !important;
-    color: lighten($nav-link-color, 20%);
-  }
+  //height: 500px;
+  padding: 0 50px;
 
-  .Mui-selected {
-    color: $active-link-color;
+  h1 {
+    align-self: center;
   }
 }

@@ -1,0 +1,32 @@
+.adsp-01__ages {
+  width: 100%;
+  margin-bottom: 1.875rem;
+}
+
+.adsp-01__ages-options-container {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.adsp-01__ages-options-container .MuiBottomNavigation-root {
+  border: 1px solid #e9cfad;
+}
+.adsp-01__ages-options-container
+  .MuiBottomNavigation-root
+  .adsp-01__age-options {
+  border-right: solid 1px #e9cfad;
+}
+.adsp-01__ages-options-container .MuiBottomNavigation-root :last-child {
+  border-right: none;
+}
+.adsp-01__ages-options-container .MuiBottomNavigationAction-label {
+  font-size: 0.9375rem !important;
+  color: #775120;
+}
+.adsp-01__ages-options-container .Mui-selected {
+  color: #31853c;
+}
+
+/*# sourceMappingURL=ages-filter.css.map */

@@ -4,14 +4,10 @@ export interface Age {
 }
 
 export interface Cost {
-  wood: number;
-  food: number;
-  gold: number;
+  name:string;
+  amount: number;
+  enabled: boolean;
 }
 
-export interface Filters {
-  filters: {
-    age?: Age;
-    cost?: Cost;
-  };
-}
+export type State = { age?: {} | Age | null; cost?: {} | Cost[] | null}
+export type filterAction = { type: string; payload: {} | Age | Cost }

@@ -1,6 +1,7 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
+import reducers from "./redux/reducers";
+import {State} from "./types/general-types"
 
 test("renders app and finds home nav link", () => {
   render(<App />);
@@ -12,4 +13,68 @@ test("renders app and finds units nav link", () => {
   render(<App />);
   const unitsLinkElement = screen.getByRole(/navlink-units$/i);
   expect(unitsLinkElement).toBeInTheDocument();
+});
+
+test("age filter", () => {
+  let state;
+  state = reducers(
+    {
+      filters: {
+        age: { title: "All", selectionIndex: 0 },
+        cost: [
+          { name: "wood", amount: 20, enabled: false },
+          { name: "food", amount: 20, enabled: false },
+          { name: "gold", amount: 20, enabled: false },
+        ],
+      } as State,
+    },
+    {
+      type: "CHANGE_AGE_FILTER",
+      payload: { title: "Castle", selectionIndex: 3 },
+    }
+  );
+  expect(state).toEqual({
+    filters: {
+      age: { title: "Castle", selectionIndex: 3 },
+      cost: [
+        { name: "wood", amount: 20, enabled: false },
+        { name: "food", amount: 20, enabled: false },
+        { name: "gold", amount: 20, enabled: false },
+      ],
+    } as State,
+  });
+});
+
+test("cost filter", () => {
+  let state;
+  state = reducers(
+    {
+      filters: {
+        age: { title: "All", selectionIndex: 0 },
+        cost: [
+          { name: "wood", amount: 20, enabled: true },
+          { name: "food", amount: 20, enabled: false },
+          { name: "gold", amount: 20, enabled: false },
+        ],
+      } as State,
+    },
+    {
+      type: "CHANGE_COST_FILTER",
+      payload: [
+        { name: "wood", amount: 75, enabled: true },
+        { name: "food", amount: 20, enabled: false },
+        { name: "gold", amount: 20, enabled: false },
+      ],
+    }
+  );
+  expect(state).toEqual({
+    filters: {
+      age: { title: "All", selectionIndex: 0 },
+      cost: [
+        { name: "wood", amount: 75, enabled: true },
+        { name: "food", amount: 20, enabled: false },
+        { name: "gold", amount: 20, enabled: false },
+      ],
+    } as State,
+  });
 });

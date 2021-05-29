@@ -1,0 +1,46 @@
+@import "../library";
+
+//costs filter
+.#{$prefix}costs {
+  width: 100%;
+}
+
+.#{$prefix}costs-options-container {
+  @include flex-column(flex-start, flex-start);
+}
+.#{$prefix}wood-option-container {
+  @include flex-column(flex-start, center);
+  height: 100px;
+  background-color: antiquewhite;
+}
+
+.#{$prefix}row {
+  display: flex;
+}
+
+.#{$prefix}column {
+  display: block;
+}
+.#{$prefix}checkbox-column {
+  width: 100px;
+  //background-color: antiquewhite;
+}
+.#{$prefix}slider-column {
+  position: relative;
+  width: 250px;
+  //background-color: rgb(161, 199, 211);
+}
+.#{$prefix}slider {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  width: 230px;
+}
+.#{$prefix}slider-label {
+  position: relative;
+  top: 7px;
+  left: 20px;
+  width: 50px;
+  cursor: default;
+  //background-color: rgb(192, 211, 161);
+}
