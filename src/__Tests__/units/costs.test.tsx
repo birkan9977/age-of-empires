@@ -35,7 +35,7 @@ describe("Cost Component - user clicks input:", () => {
 });
 
 describe("Sliders and their Labels", () => {
-  test("wood slider", () => {
+  test("wood slider", async () => {
     render(<App />);
     const checkbox = screen.getByTestId("wood-input");
     userEvent.click(checkbox, leftClick);
@@ -47,12 +47,11 @@ describe("Sliders and their Labels", () => {
     expect(screen.getByTestId("wood-slider-label")).toHaveTextContent("70");
     userEvent.click(screen.getByText(/Castle/i), leftClick);
     // wait for redux to update state...
-    return mockApi(delay).then(() => {
-      const records = screen.getByTestId("number-of-records");
-      expect(records).toHaveTextContent("33");
-    });
+    await mockApi(delay);
+    const records = screen.getByTestId("number-of-records");
+    expect(records).toHaveTextContent("33");
   });
-  test("food slider", () => {
+  test("food slider", async () => {
     render(<App />);
     const checkbox = screen.getByTestId("food-input");
     userEvent.click(checkbox, leftClick);
@@ -63,10 +62,9 @@ describe("Sliders and their Labels", () => {
     expect(screen.getByTestId("food-slider-label")).toHaveTextContent("40");
     userEvent.click(screen.getByText(/Feudal/i), leftClick);
     // wait for redux to update state...
-    return mockApi(delay).then(() => {
-      const records = screen.getByTestId("number-of-records");
-      expect(records).toHaveTextContent("7");
-    });
+    await mockApi(delay);
+    const records = screen.getByTestId("number-of-records");
+    expect(records).toHaveTextContent("7");
   });
   test("gold slider", async () => {
     render(<App />);
@@ -79,7 +77,7 @@ describe("Sliders and their Labels", () => {
     expect(screen.getByTestId("gold-slider-label")).toHaveTextContent("32");
     userEvent.click(screen.getByText(/Dark/i), leftClick);
     // wait for redux to update state...
-    return mockApi(delay).then(() => {
+    await mockApi(delay).then(() => {
       const records = screen.getByTestId("number-of-records");
       expect(records).toHaveTextContent("13");
     });

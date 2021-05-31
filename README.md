@@ -1,9 +1,11 @@
 ## Assignment for Adesso
 
 ### test
+command line
+> yarn test
 
-yarn test
+click "a" for all test suites from "jest" options screen
 
 ### run
-
-yarn start
+command line
+> yarn start

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../utils/class-prefix";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -41,7 +40,7 @@ const Routes = ({ pageChange }) => {
 
   return (
     <div>
-      <Router>
+      
         <div>
           <nav className={cn("navbar")}>
             <ul>
@@ -84,12 +83,18 @@ const Routes = ({ pageChange }) => {
                 display={false}
               />
             </Route>
+            <Route path="/unit-detail">
+              <GetLocation
+                currentPath={(e) => handleCurrentLocation(e)}
+                display={false}
+              />
+            </Route>
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
           </Switch>
         </div>
-      </Router>
+      
     </div>
   );
 };

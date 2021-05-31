@@ -1,24 +1,34 @@
 import { DataGrid } from "@material-ui/data-grid";
 import { connect } from "react-redux";
-import { useState, useEffect } from "react";
 import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../../utils/class-prefix";
 import "../../styles/css/units/table-data.css";
+import { setSelectedRow } from "../../redux/data/actions"
+import { useHistory } from "react-router-dom";
+
 const cn = classnames(`${prefix}`);
 
-const DataTable = (props) => {
-  const { data } = props;
-  const [rowid, setRowId] = useState(0);
-
-  const handleRowSelect: any = (e) => {
-    setRowId(e);
+type Row = {
+  id:number;
+  name:string;
+  age:string;
+  cost?:{
+    Wood?:number | null;
+    Food?:Number | null;
+    Gold?:Number | null;
   };
-  useEffect(() => {
-    if (data) {
-      //console.log(rowid);
-    }
-  });
-  //console.log("DATA TABLE", data);
+}
+
+const DataTable = (props) => {
+  const { data, setRowId } = props;
+  const history = useHistory();
+
+  const handleRowSelect = (gridRow) => {
+    //console.log(gridRow, typeof gridRow)
+    setRowId(gridRow.row.id);
+    history.push("/unit-detail");
+  };
+  
   const columns = [
     { field: "id", headerName: "id", width: 130 },
     { field: "name", headerName: "Name", width: 200 },
@@ -26,10 +36,11 @@ const DataTable = (props) => {
     { field: "costs", headerName: "Costs", width: 200 },
   ];
 
-  let rows = [];
+  
+  let rows:Row[] = [];
 
   if (data) {
-    rows = data.map((dataRow) => {
+    rows = data.map((dataRow:Row) => {
       let row = {
         id: dataRow.id,
         name: dataRow.name,
@@ -38,12 +49,11 @@ const DataTable = (props) => {
       };
       if (dataRow.cost) {
         const costField: string[] = [];
-        // if (dataRow.cost.Wood) is unstable that is why 'hasOwnProperty' is preferred here
-        if (dataRow.cost.hasOwnProperty("Wood"))
+        if (dataRow.cost.Wood)
           costField.push(`Wood: ${dataRow.cost.Wood}`);
-        if (dataRow.cost.hasOwnProperty("Food"))
+        if (dataRow.cost.Food)
           costField.push(`Food: ${dataRow.cost.Food}`);
-        if (dataRow.cost.hasOwnProperty("Gold"))
+        if (dataRow.cost.Gold)
           costField.push(`Gold: ${dataRow.cost.Gold}`);
         const costString = costField.join(", ");
         row.costs = costString;
@@ -80,4 +90,10 @@ const mapStateToProps = (state) => {
   return { data };
 };
 
-export default connect(mapStateToProps)(DataTable);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setRowId: (rowId:number)=> dispatch(setSelectedRow(rowId))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DataTable);
