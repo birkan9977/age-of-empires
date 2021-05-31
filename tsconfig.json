@@ -21,7 +21,9 @@
     "incremental": true
   },
   "include": [
-    "src/**/*" // *** The files TypeScript should type check ***
+    "src/**/*", // *** The files TypeScript should type check ***
+    "__Tests__",
+    "__Tests__"
   ],
   "exclude": ["node_modules", "build"] // *** The files to not type check ***
 }

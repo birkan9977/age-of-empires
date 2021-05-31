@@ -33,12 +33,20 @@ type Prop = {
 const CostsFilter = (props: Prop): JSX.Element => {
   const { cost, changeCostsFilter } = props;
 
-  const [state, setState] = useState({
+  const [state, setState] = useState<{
+    wood: boolean;
+    food: boolean;
+    gold: boolean;
+  }>({
     wood: cost[0].enabled || false,
     food: cost[1].enabled || false,
     gold: cost[2].enabled || false,
   });
-  const [sliderValues, setSliderValues] = useState({
+  const [sliderValues, setSliderValues] = useState<{
+    wood: number;
+    food: number;
+    gold: number;
+  }>({
     wood: cost[0].amount || 0,
     food: cost[1].amount || 0,
     gold: cost[2].amount || 0,
@@ -56,15 +64,15 @@ const CostsFilter = (props: Prop): JSX.Element => {
       if (event.target.className.indexOf("MuiSlider") > -1) {
         //slider component does not return a specific attribute because of the mouse events
         //therefore we find the parent node for identifying the slider id.
-        const id: string = findParentId(event, "slider-context");
-        //console.log("found-slider-div-id", id);
-        const index: number = id.indexOf("slider-context");
-        const refinedId: string = id.substring(0, index - 1);
-        //console.log(refinedId);
-        const regex = new RegExp(`(^wood$)|(^food$)|(^gold$)`, "g");
-        const found: boolean = refinedId.search(regex) > -1;
-        if (found) {
-          setSliderValues({ ...sliderValues, [refinedId]: newValue });
+        const id: string | null = findParentId(event, "slider-context");
+        if (typeof id === "string") {
+          const index: number = id.indexOf("slider-context");
+          const refinedId: string = id.substring(0, index - 1);
+          const regex = new RegExp(`(^wood$)|(^food$)|(^gold$)`, "g");
+          const found: boolean = refinedId.search(regex) > -1;
+          if (found) {
+            setSliderValues({ ...sliderValues, [refinedId]: newValue });
+          }
         }
       }
     }
@@ -76,7 +84,7 @@ const CostsFilter = (props: Prop): JSX.Element => {
     updateDataforRedux();
   };
 
-  const updateDataforRedux = () => {
+  const updateDataforRedux = (): void => {
     const costDataForRedux = costsData.map(
       (item): Cost => {
         return {
@@ -106,6 +114,9 @@ const CostsFilter = (props: Prop): JSX.Element => {
                 <FormControlLabel
                   control={
                     <GreenCheckbox
+                      role="checkbox"
+                      aria-checked={state[costItem.name]}
+                      data-testid={`${costItem.name}-input`}
                       checked={state[costItem.name]}
                       onChange={handleCheckBoxChange}
                       name={costItem.name}
@@ -122,6 +133,12 @@ const CostsFilter = (props: Prop): JSX.Element => {
                       className={cn("slider")}
                     >
                       <Slider
+                        aria-label={`${costItem.name}-cost-slider-input`}
+                        data-testid={`${costItem.name}-slider-input`}
+                        aria-valuenow={sliderValues[costItem.name]}
+                        aria-valuetext={`${
+                          costItem.name
+                        } value is ${sliderValues[costItem.name].toString()}`}
                         value={sliderValues[costItem.name]}
                         onChange={handleSliderChange}
                         onChangeCommitted={handleSliderCommit}
@@ -139,6 +156,8 @@ const CostsFilter = (props: Prop): JSX.Element => {
                 />
               </div>
               <div
+                id={`slider-${costItem.name}-label`}
+                data-testid={`${costItem.name}-slider-label`}
                 className={cn("column", "slider-label")}
                 title="Min: 0; Max: 200"
               >

@@ -28,5 +28,16 @@
 
   .Mui-selected {
     color: $active-link-color;
+
+    background-color: rgb(229, 238, 238);
   }
+  .MuiBottomNavigationAction-root {
+    border: solid 1px lighten($nav-link-color, 70%) !important;
+  }
+}
+
+.#{$prefix}hidden {
+  display: block;
+  position: relative;
+  visibility: hidden;
 }

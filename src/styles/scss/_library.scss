@@ -1,5 +1,9 @@
 $fonts: "Roboto", Arial, sans-serif !default;
 
+@function pixelToRem($pixelValue) {
+  @return $pixelValue/16 * 1rem;
+}
+
 $primary: #ea9215 !default;
 $secondary: #1d3ed1 !default;
 $app-white: rgba(rgb(240, 245, 245), 0.8);
@@ -7,7 +11,7 @@ $app-white-fallback: rgb(240, 245, 245);
 $app-black: rgba(rgb(46, 44, 44), 0.8);
 $app-black-fallback: rgb(46, 44, 44);
 $font-primary: $fonts;
-$font-size: 16px !default;
+$font-size: pixelToRem(16) !default;
 $container-margin: 2rem; //from both sides
 $bars-background-color: rgb(199, 136, 54);
 $navbar-background-color: lighten($bars-background-color, 30%);
@@ -20,14 +24,11 @@ $breakpoint-md: 768;
 $breakpoint-lg: 992;
 $breakpoint-xl: 1200;
 
-$left-margin: 150px;
 //class prefix for the project
 //make sure $prefix has same value with classPrefix export in 'utils/class-prefix.js'
 $prefix: "adsp-01__";
 
-@function pixelToRem($pixelValue) {
-  @return $pixelValue/16 * 1rem;
-}
+$left-margin: pixelToRem(150);
 
 @function adjust($oldValue, $percentage) {
   @return $oldValue * $percentage / 100;

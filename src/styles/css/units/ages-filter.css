@@ -1,7 +1,7 @@
 .adsp-01__ages {
   width: 100%;
   margin-bottom: 1.875rem;
-  margin-left: 150px;
+  margin-left: 9.375rem;
 }
 
 .adsp-01__ages-options-container {
@@ -28,6 +28,16 @@
 }
 .adsp-01__ages-options-container .Mui-selected {
   color: #31853c;
+  background-color: #e5eeee;
+}
+.adsp-01__ages-options-container .MuiBottomNavigationAction-root {
+  border: solid 1px #e9cfad !important;
+}
+
+.adsp-01__hidden {
+  display: block;
+  position: relative;
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=ages-filter.css.map */

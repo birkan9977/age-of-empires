@@ -18,7 +18,7 @@ function* fetchData(action: FilterAction) {
   const currentFiltersState = yield select(getFiltersState);
   //yield console.log('state',currentState)
   const filteredData = yield call(filterData, loadedData, currentFiltersState);
-  yield console.log(filteredData);
+  //yield console.log(filteredData);
   yield put(updateData(filteredData));
 }
 

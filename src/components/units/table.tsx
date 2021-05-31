@@ -15,10 +15,10 @@ const DataTable = (props) => {
   };
   useEffect(() => {
     if (data) {
-      console.log(rowid);
+      //console.log(rowid);
     }
   });
-  console.log("DATA TABLE", data);
+  //console.log("DATA TABLE", data);
   const columns = [
     { field: "id", headerName: "id", width: 130 },
     { field: "name", headerName: "Name", width: 200 },
@@ -37,14 +37,15 @@ const DataTable = (props) => {
         costs: "",
       };
       if (dataRow.cost) {
-        const costStringArray: string[] = [];
+        const costField: string[] = [];
+        // if (dataRow.cost.Wood) is unstable that is why 'hasOwnProperty' is preferred here
         if (dataRow.cost.hasOwnProperty("Wood"))
-          costStringArray.push(`Wood: ${dataRow.cost.Wood}`);
+          costField.push(`Wood: ${dataRow.cost.Wood}`);
         if (dataRow.cost.hasOwnProperty("Food"))
-          costStringArray.push(`Food: ${dataRow.cost.Food}`);
+          costField.push(`Food: ${dataRow.cost.Food}`);
         if (dataRow.cost.hasOwnProperty("Gold"))
-          costStringArray.push(`Gold: ${dataRow.cost.Gold}`);
-        const costString = costStringArray.join(", ");
+          costField.push(`Gold: ${dataRow.cost.Gold}`);
+        const costString = costField.join(", ");
         row.costs = costString;
       } else {
         row.costs = "No Cost";
@@ -56,7 +57,8 @@ const DataTable = (props) => {
   return (
     <div className={cn("table-container")}>
       <div className={cn("records-number-text")}>
-        Number of Records Displayed: {rows.length}
+        Number of Records Displayed:{" "}
+        <span data-testid="number-of-records">{rows.length}</span>
       </div>
       <div className={cn("table")}>
         <DataGrid

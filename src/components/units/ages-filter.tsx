@@ -9,7 +9,6 @@ import { connect } from "react-redux";
 import { Age } from "../../types/general-types";
 
 const cn = classnames(`${prefix}`);
-const debug = false;
 
 type Prop = {
   age?: Age | any;
@@ -41,7 +40,10 @@ const AgesFilter = (props: Prop): JSX.Element => {
             );
           })}
         </BottomNavigation>
-        {debug && <div>AGE {age.title}</div>}
+        {/*below div is only for testing purposes*/}
+        <div className={cn("hidden")}>
+          AGE <span data-testid="age-value">{age.title}</span>
+        </div>
       </div>
     </div>
   );

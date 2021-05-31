@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import App from "./App";
-import reducers from "./redux/reducers";
-import { State } from "./types/general-types";
+import App from "../App";
+import reducers from "../redux/reducers";
+import { State } from "../types/general-types";
 
-describe("Page Tests", function () {
+describe("Home Page", function () {
   test("renders app and finds home nav link", () => {
     render(<App />);
     const homeLinkElement = screen.getByRole(/navlink-home$/i);
@@ -17,10 +17,11 @@ describe("Page Tests", function () {
   });
 });
 
-describe("Redux Filter Tests", function () {
+describe("Redux Filter", function () {
   test("age filter", () => {
     let state = reducers(
-      { dataReducer:{},
+      {
+        dataReducer: {},
         filterReducer: {
           age: { title: "All", selectionIndex: 0 },
           cost: [
@@ -36,7 +37,7 @@ describe("Redux Filter Tests", function () {
       }
     );
     expect(state).toEqual({
-      dataReducer:{},
+      dataReducer: {},
       filterReducer: {
         age: { title: "Castle", selectionIndex: 3 },
         cost: [
@@ -50,7 +51,8 @@ describe("Redux Filter Tests", function () {
 
   test("cost filter", () => {
     let state = reducers(
-      { dataReducer:{},
+      {
+        dataReducer: {},
         filterReducer: {
           age: { title: "All", selectionIndex: 0 },
           cost: [
@@ -70,7 +72,7 @@ describe("Redux Filter Tests", function () {
       }
     );
     expect(state).toEqual({
-      dataReducer:{},
+      dataReducer: {},
       filterReducer: {
         age: { title: "All", selectionIndex: 0 },
         cost: [

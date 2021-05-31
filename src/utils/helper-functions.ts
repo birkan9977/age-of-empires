@@ -4,26 +4,21 @@ export function findParentId(
   evt: React.ChangeEvent<HTMLInputElement>,
   prefix: string
 ) {
-  //console.log("helper", e, prefix);
-  if (!evt) return "not found";
+  if (!evt) return null;
   let count: number = 0;
   let elementId: string = "";
-  const id: string = recursiveIdFinder(evt.target);
+  const id: string | null = recursiveIdFinder(evt.target);
   return id;
-  function recursiveIdFinder(elem: any): string {
-    if (!elem) return "not found";
+  function recursiveIdFinder(elem: any): string | null {
+    if (!elem) return null;
     count++;
     if (elem.id.indexOf(prefix) > -1) {
       elementId = elem.id;
-      //console.log(elem.id);
-      //console.log("elementId", elementId);
       return elementId;
     }
     if (count > 10) {
-      //console.log(elem.nodeName, count, "not found!");
-      return "not found";
+      return null;
     } else {
-      //console.log(count);
       return recursiveIdFinder(elem.parentElement);
     }
   }
