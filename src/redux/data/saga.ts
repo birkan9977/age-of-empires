@@ -9,7 +9,7 @@ type Action = {
   type: string;
   payload: number;
 };
-function* updateUnitDetail(action: Action) {
+export function* updateUnitDetail(action: Action) {
   const id = action.payload;
   const dataState = yield select(getDataState);
   const selectedRow = yield dataState.find((item: RawData) => item.id === id);

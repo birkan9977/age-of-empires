@@ -5,7 +5,7 @@ import filterData from "../../services/filter-data";
 import { getFiltersState } from "../selectors";
 import { updateData } from "../data/actions";
 
-function* fetchData() {
+export function* fetchData(action) {
   //simulate an api call with delay in milliseconds if preferred: default '0'
   const delay = 0;
   const loadedData = yield call(getData, delay);
