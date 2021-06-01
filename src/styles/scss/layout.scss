@@ -1,18 +1,18 @@
 @import "./library";
 
-.#{$prefix}layout-container {
+.#{$prefix}-layout-container {
   display: flex;
   flex-direction: column;
 }
 
-.#{$prefix}footer {
+.#{$prefix}-footer {
   margin: pixelToRem(50) 0;
   padding: pixelToRem(10) 0;
   background-color: $bars-background-color;
   @include flex-column(center, center);
 }
 
-.#{$prefix}footer-inside {
+.#{$prefix}-footer-inside {
   width: 100%;
   padding: pixelToRem(5) 0;
   color: $app-black;

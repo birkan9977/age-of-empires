@@ -1,7 +1,7 @@
 @import "./library";
 
 $navbar-height: pixelToRem(90);
-.#{$prefix}navbar {
+.#{$prefix}-navbar {
   height: $navbar-height;
   background-color: $bars-background-color;
   @include flex-column(center, center);
@@ -24,9 +24,9 @@ $navbar-height: pixelToRem(90);
   }
 }
 
-.#{$prefix}active {
+.#{$prefix}-active {
   color: $active-link-color;
 }
-.#{$prefix}path {
+.#{$prefix}-path {
   color: darken($active-link-color, 50%);
 }

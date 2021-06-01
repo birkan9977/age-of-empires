@@ -1,6 +1,6 @@
 @import "./library";
 
-.#{$prefix}unit-detail {
+.#{$prefix}-unit-detail {
   @include flex-column(flex-start, flex-start);
   padding: 30px 50px;
   width: 100%;
@@ -10,25 +10,25 @@
   }
 }
 
-.#{$prefix}table-container {
+.#{$prefix}-table-container {
   width: 100%;
 }
-.#{$prefix}grid-container {
+.#{$prefix}-grid-container {
   width: 100%;
   margin-bottom: 5px;
 }
-.#{$prefix}paper-col1 {
+.#{$prefix}-paper-col1 {
   width: 100%;
   height: 100%;
   color: $app-black !important;
 }
-.#{$prefix}paper-col2 {
+.#{$prefix}-paper-col2 {
   width: 100%;
   height: 100%;
   color: lighten($app-black, 20%) !important;
 }
 
-.#{$prefix}foor-note {
+.#{$prefix}-foor-note {
   font-size: small;
   margin-left: 50px;
 }

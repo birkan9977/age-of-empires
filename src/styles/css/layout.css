@@ -1,9 +1,9 @@
-.adsp-01__layout-container {
+.adsp-01__-layout-container {
   display: flex;
   flex-direction: column;
 }
 
-.adsp-01__footer {
+.adsp-01__-footer {
   margin: 3.125rem 0;
   padding: 0.625rem 0;
   background-color: #c78836;
@@ -13,7 +13,7 @@
   align-items: center;
 }
 
-.adsp-01__footer-inside {
+.adsp-01__-footer-inside {
   width: 100%;
   padding: 0.3125rem 0;
   color: rgba(46, 44, 44, 0.8);

@@ -11,8 +11,8 @@ import Slider from "@material-ui/core/Slider";
 import { findParentId } from "../../utils/helper-functions";
 import { changeCostsFilter } from "../../redux/filters/actions";
 import { Cost } from "../../types/general-types";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks"
-import { InferredDataState } from "../../redux/selectors"
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { InferredDataState } from "../../redux/selectors";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -27,8 +27,10 @@ const GreenCheckbox = withStyles({
 const cn = classnames(`${prefix}`);
 
 const CostsFilter = (): JSX.Element => {
-  const cost:Cost = useAppSelector((state: InferredDataState) => state.filterReducer.cost) 
-  const dispatch = useAppDispatch()
+  const cost: Cost = useAppSelector(
+    (state: InferredDataState) => state.filterReducer.cost
+  );
+  const dispatch = useAppDispatch();
 
   const [state, setState] = useState<{
     wood: boolean;
@@ -76,7 +78,6 @@ const CostsFilter = (): JSX.Element => {
 
   //onMouseOut send the data to redux
   const handleSliderCommit = (event: any, value: number | number[]): void => {
-    //console.log("slider ", sliderValues);
     updateDataforRedux();
   };
 
@@ -90,7 +91,6 @@ const CostsFilter = (): JSX.Element => {
         };
       }
     );
-    //console.log("redux data", costDataForRedux);
     dispatch(changeCostsFilter(costDataForRedux));
   };
 

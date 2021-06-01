@@ -1,40 +1,38 @@
-.adsp-01__ages {
+.adsp-01__-ages {
   width: 100%;
   margin-bottom: 1.875rem;
   margin-left: 9.375rem;
 }
 
-.adsp-01__ages-options-container {
+.adsp-01__-ages-options-container {
   height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.adsp-01__ages-options-container .MuiBottomNavigation-root {
+.adsp-01__-ages-options-container .MuiBottomNavigation-root {
   border: 1px solid #e9cfad;
 }
-.adsp-01__ages-options-container
-  .MuiBottomNavigation-root
-  .adsp-01__age-options {
+.adsp-01__-ages-options-container .MuiBottomNavigation-root .adsp-01__-age-options {
   border-right: solid 1px #e9cfad;
 }
-.adsp-01__ages-options-container .MuiBottomNavigation-root :last-child {
+.adsp-01__-ages-options-container .MuiBottomNavigation-root :last-child {
   border-right: none;
 }
-.adsp-01__ages-options-container .MuiBottomNavigationAction-label {
+.adsp-01__-ages-options-container .MuiBottomNavigationAction-label {
   font-size: 0.9375rem !important;
   color: #775120;
 }
-.adsp-01__ages-options-container .Mui-selected {
+.adsp-01__-ages-options-container .Mui-selected {
   color: #31853c;
   background-color: #e5eeee;
 }
-.adsp-01__ages-options-container .MuiBottomNavigationAction-root {
+.adsp-01__-ages-options-container .MuiBottomNavigationAction-root {
   border: solid 1px #e9cfad !important;
 }
 
-.adsp-01__hidden {
+.adsp-01__-hidden {
   display: block;
   position: relative;
   visibility: hidden;

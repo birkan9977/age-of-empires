@@ -1,16 +1,16 @@
-.adsp-01__costs {
+.adsp-01__-costs {
   width: 100%;
   margin-left: 9.375rem;
 }
 
-.adsp-01__costs-options-container {
+.adsp-01__-costs-options-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.adsp-01__wood-option-container {
+.adsp-01__-wood-option-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,31 +19,31 @@
   background-color: antiquewhite;
 }
 
-.adsp-01__row {
+.adsp-01__-row {
   display: flex;
 }
 
-.adsp-01__column {
+.adsp-01__-column {
   display: block;
 }
 
-.adsp-01__checkbox-column {
+.adsp-01__-checkbox-column {
   width: 100px;
 }
 
-.adsp-01__slider-column {
+.adsp-01__-slider-column {
   position: relative;
   width: 250px;
 }
 
-.adsp-01__slider {
+.adsp-01__-slider {
   position: relative;
   top: 10px;
   left: 20px;
   width: 230px;
 }
 
-.adsp-01__slider-label {
+.adsp-01__-slider-label {
   position: relative;
   top: 7px;
   left: 20px;

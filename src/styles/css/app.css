@@ -120,8 +120,7 @@ a {
   color: #271a0a;
   transition: all 0.3s ease;
 }
-a:active,
-alink {
+a:active, alink {
   color: #271a0a;
 }
 a:hover {
@@ -132,14 +131,14 @@ a:hover {
 we use a prefix unique to our project to make sure the class names would not clash with other class names to be added later with third party libraries such as bootstrap or material ui
 
 !!!In order to change the class prefix, modify both 'src/utils/class-prefix.js' and 'src/styles/_library.scss'!!!
-usage: '.adsp-01__<className>'
+usage: '.adsp-01__-<className>'
 */
-.adsp-01__main {
+.adsp-01__-main {
   display: block;
   margin: 0;
 }
 
-.adsp-01__app-container {
+.adsp-01__-app-container {
   display: block;
   margin: auto;
   max-width: 73rem;

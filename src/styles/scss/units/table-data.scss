@@ -1,5 +1,5 @@
 @import "../library";
-.#{$prefix}table-container {
+.#{$prefix}-table-container {
   @include flex-column(center, flex-end);
   padding: 40px;
   //background-color: aqua;
@@ -8,10 +8,10 @@
   margin-bottom: 10px;
 }
 
-.#{$prefix}records-number-text {
+.#{$prefix}-records-number-text {
   padding: 15px;
 }
-.#{$prefix}table {
+.#{$prefix}-table {
   height: 400px;
   width: 800px;
 }

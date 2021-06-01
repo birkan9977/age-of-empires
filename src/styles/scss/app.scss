@@ -60,15 +60,15 @@ a {
 we use a prefix unique to our project to make sure the class names would not clash with other class names to be added later with third party libraries such as bootstrap or material ui
 
 !!!In order to change the class prefix, modify both 'src/utils/class-prefix.js' and 'src/styles/_library.scss'!!!
-usage: '.#{$prefix}<className>'
+usage: '.#{$prefix}-<className>'
 */
 
-.#{$prefix}main {
+.#{$prefix}-main {
   display: block;
   margin: 0;
 }
 
-.#{$prefix}app-container {
+.#{$prefix}-app-container {
   display: block;
   margin: auto;
   max-width: pixelToRem($breakpoint-xl)-$container-margin;

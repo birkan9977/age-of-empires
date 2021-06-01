@@ -6,10 +6,10 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { useEffect } from "react";
-import { useAppSelector } from "../../redux/hooks"
-import { InferredDataState } from "../../redux/selectors"
+import { useAppSelector } from "../../redux/hooks";
+import { InferredDataState } from "../../redux/selectors";
 
- const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 0.1,
@@ -28,10 +28,11 @@ import { InferredDataState } from "../../redux/selectors"
 );
 const cn = classnames(`${prefix}`);
 
-
 const UnitDetail = (): JSX.Element => {
-  const unitDetail = useAppSelector((state:InferredDataState) => state.dataReducer.unitDetail) 
-  
+  const unitDetail = useAppSelector(
+    (state: InferredDataState) => state.dataReducer.unitDetail
+  );
+
   useEffect(() => {
     const element = document.getElementById("unit-detail");
     if (element) {
@@ -44,7 +45,7 @@ const UnitDetail = (): JSX.Element => {
     <div id="unit-detail" className={cn("unit-detail")}>
       <h1>Unit Detail Page</h1>
       <div className={clsx(classes.root, cn("table-container"))}>
-        {unitDetail[0][1]!==0//ID=0
+        {unitDetail[0][1] !== 0 //ID=0
           ? unitDetail.map((row, index: number) => {
               return (
                 <div className={cn("grid-container")} key={`row-${index}`}>
@@ -75,7 +76,5 @@ const UnitDetail = (): JSX.Element => {
     </div>
   );
 };
-
-
 
 export default UnitDetail;

@@ -1,5 +1,4 @@
 export default function filterData(units, filtersState) {
-  //console.log(units,state)
   const { age, cost } = filtersState;
   let filteredData = units;
 

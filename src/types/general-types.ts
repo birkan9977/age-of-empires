@@ -10,7 +10,7 @@ export interface Cost {
 }
 
 export type FilterState = {
-  age: Age ;
+  age: Age;
   cost: Cost[];
 };
 

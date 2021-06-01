@@ -5,7 +5,6 @@ export default function getData(delay) {
       resolve(
         import("../data/age-of-empires-units.json")
           .then((data) => {
-            //console.log("data loaded from mock api service");
             return data.units;
           })
           .catch((err) => {

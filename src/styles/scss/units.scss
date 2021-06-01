@@ -1,6 +1,6 @@
 @import "./library";
 
-.#{$prefix}units {
+.#{$prefix}-units {
   @include flex-column(flex-start, flex-start);
   //height: 500px;
   padding: 0 50px;
@@ -10,7 +10,7 @@
     align-self: center;
   }
 
-  .#{$prefix}data-container {
+  .#{$prefix}-data-container {
     align-self: center;
   }
 }

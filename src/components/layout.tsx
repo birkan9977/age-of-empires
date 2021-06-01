@@ -2,7 +2,7 @@ import Routes from "./routes";
 import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../utils/class-prefix";
 import "../styles/css/layout.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Home from "./pages/home";
 import Units from "./pages/units";
 import UnitDetail from "./pages/unit-detail";
@@ -10,15 +10,10 @@ import UnitDetail from "./pages/unit-detail";
 const cn = classnames(`${prefix}`);
 
 const Layout = () => {
-  //'cn' alias for className
   const [page, setPage] = useState<string>("home");
   const handlePageChange = (page: string): void => {
     setPage(page);
   };
-
-  useEffect(() => {
-    //console.log("PAGE", page);
-  }, [page]);
 
   return (
     <div className={cn("layout-container")}>

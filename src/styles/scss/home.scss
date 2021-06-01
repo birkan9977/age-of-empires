@@ -1,8 +1,8 @@
 @import "./library";
 
-.#{$prefix}home {
+.#{$prefix}-home {
   @include flex-column(center, flex-start);
-  .#{$prefix}image-container {
+  .#{$prefix}-image-container {
     border: none;
     padding: 10px;
   }

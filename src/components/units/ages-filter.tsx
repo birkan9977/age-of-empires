@@ -6,20 +6,22 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import { agesData as ages } from "../../data/ages-data";
 import { changeAgeFilter } from "../../redux/filters/actions";
 import { Age } from "../../types/general-types";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks"
-import { InferredDataState } from "../../redux/selectors"
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { InferredDataState } from "../../redux/selectors";
 
 const cn = classnames(`${prefix}`);
 
 const AgesFilter = (): JSX.Element => {
-  const age:Age = useAppSelector((state: InferredDataState) => state.filterReducer.age) 
-  const dispatch = useAppDispatch()
+  const age: Age = useAppSelector(
+    (state: InferredDataState) => state.filterReducer.age
+  );
+  const dispatch = useAppDispatch();
   return (
     <div className={cn("ages")}>
       <h2>Ages</h2>
       <div className={cn("ages-options-container")}>
         <BottomNavigation
-          value={age.selectionIndex || 0} 
+          value={age.selectionIndex || 0}
           onChange={(event, newValue) => {
             dispatch(changeAgeFilter(ages[newValue]));
           }}
@@ -42,7 +44,5 @@ const AgesFilter = (): JSX.Element => {
     </div>
   );
 };
-
-
 
 export default AgesFilter;

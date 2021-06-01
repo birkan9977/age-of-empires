@@ -1,4 +1,4 @@
-.adsp-01__table-container {
+.adsp-01__-table-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -9,11 +9,11 @@
   margin-bottom: 10px;
 }
 
-.adsp-01__records-number-text {
+.adsp-01__-records-number-text {
   padding: 15px;
 }
 
-.adsp-01__table {
+.adsp-01__-table {
   height: 400px;
   width: 800px;
 }

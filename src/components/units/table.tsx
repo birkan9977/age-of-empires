@@ -1,10 +1,11 @@
 import { DataGrid } from "@material-ui/data-grid";
-import { connect } from "react-redux";
 import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../../utils/class-prefix";
 import "../../styles/css/units/table-data.css";
 import { setSelectedRow } from "../../redux/data/actions";
 import { useHistory } from "react-router-dom";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { InferredDataState } from "../../redux/selectors";
 
 const cn = classnames(`${prefix}`);
 
@@ -19,13 +20,16 @@ type Row = {
   };
 };
 
-const DataTable = (props) => {
-  const { data, setRowId } = props;
+const DataTable = (): JSX.Element => {
+  const data = useAppSelector(
+    (state: InferredDataState) => state.dataReducer.data
+  );
+  const dispatch = useAppDispatch();
+
   const history = useHistory();
 
   const handleRowSelect = (gridRow) => {
-    //console.log(gridRow, typeof gridRow)
-    setRowId(gridRow.row.id);
+    dispatch(setSelectedRow(gridRow.row.id));
     history.push("/unit-detail");
   };
 
@@ -59,7 +63,6 @@ const DataTable = (props) => {
       return row;
     });
   }
-  //MuiDataGrid-row
   return (
     <div className={cn("table-container")}>
       <div className={cn("records-number-text")}>
@@ -81,15 +84,4 @@ const DataTable = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { data } = state.dataReducer;
-  return { data };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setRowId: (rowId: number) => dispatch(setSelectedRow(rowId)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(DataTable);
+export default DataTable;
