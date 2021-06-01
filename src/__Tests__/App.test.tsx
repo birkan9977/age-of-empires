@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import App from "../App";
 import reducers from "../redux/reducers";
-import { State } from "../types/general-types";
+import { FilterState } from "../types/general-types";
 
 describe("Home Page", function () {
   test("renders app and finds home nav link", () => {
@@ -25,11 +25,11 @@ describe("Redux Filter", function () {
         filterReducer: {
           age: { title: "All", selectionIndex: 0 },
           cost: [
-            { name: "wood", amount: 20, enabled: false },
-            { name: "food", amount: 20, enabled: false },
-            { name: "gold", amount: 20, enabled: false },
+            { name: "wood", amount: [20, 100], enabled: false },
+            { name: "food", amount: [20, 100], enabled: false },
+            { name: "gold", amount: [20, 100], enabled: false },
           ],
-        } as State,
+        } as FilterState,
       },
       {
         type: "CHANGE_AGE_FILTER",
@@ -41,11 +41,11 @@ describe("Redux Filter", function () {
       filterReducer: {
         age: { title: "Castle", selectionIndex: 3 },
         cost: [
-          { name: "wood", amount: 20, enabled: false },
-          { name: "food", amount: 20, enabled: false },
-          { name: "gold", amount: 20, enabled: false },
+          { name: "wood", amount: [20, 100], enabled: false },
+          { name: "food", amount: [20, 100], enabled: false },
+          { name: "gold", amount: [20, 100], enabled: false },
         ],
-      } as State,
+      } as FilterState,
     });
   });
 
@@ -56,18 +56,18 @@ describe("Redux Filter", function () {
         filterReducer: {
           age: { title: "All", selectionIndex: 0 },
           cost: [
-            { name: "wood", amount: 20, enabled: true },
-            { name: "food", amount: 20, enabled: false },
-            { name: "gold", amount: 20, enabled: false },
+            { name: "wood", amount: [20, 100], enabled: true },
+            { name: "food", amount: [20, 100], enabled: false },
+            { name: "gold", amount: [20, 100], enabled: false },
           ],
-        } as State,
+        } as FilterState,
       },
       {
         type: "CHANGE_COST_FILTER",
         payload: [
-          { name: "wood", amount: 75, enabled: true },
-          { name: "food", amount: 20, enabled: false },
-          { name: "gold", amount: 20, enabled: false },
+          { name: "wood", amount: [75, 120], enabled: true },
+          { name: "food", amount: [20, 100], enabled: false },
+          { name: "gold", amount: [20, 100], enabled: false },
         ],
       }
     );
@@ -76,11 +76,11 @@ describe("Redux Filter", function () {
       filterReducer: {
         age: { title: "All", selectionIndex: 0 },
         cost: [
-          { name: "wood", amount: 75, enabled: true },
-          { name: "food", amount: 20, enabled: false },
-          { name: "gold", amount: 20, enabled: false },
+          { name: "wood", amount: [75, 120], enabled: true },
+          { name: "food", amount: [20, 100], enabled: false },
+          { name: "gold", amount: [20, 100], enabled: false },
         ],
-      } as State,
+      } as FilterState,
     });
   });
 });

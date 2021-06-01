@@ -14,7 +14,9 @@
 .adsp-01__-ages-options-container .MuiBottomNavigation-root {
   border: 1px solid #e9cfad;
 }
-.adsp-01__-ages-options-container .MuiBottomNavigation-root .adsp-01__-age-options {
+.adsp-01__-ages-options-container
+  .MuiBottomNavigation-root
+  .adsp-01__-age-options {
   border-right: solid 1px #e9cfad;
 }
 .adsp-01__-ages-options-container .MuiBottomNavigation-root :last-child {

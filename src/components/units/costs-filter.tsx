@@ -42,13 +42,13 @@ const CostsFilter = (): JSX.Element => {
     gold: cost[2].enabled || false,
   });
   const [sliderValues, setSliderValues] = useState<{
-    wood: number;
-    food: number;
-    gold: number;
+    wood: number[];
+    food: number[];
+    gold: number[];
   }>({
-    wood: cost[0].amount || 0,
-    food: cost[1].amount || 0,
-    gold: cost[2].amount || 0,
+    wood: [cost[0].amount[0], cost[0].amount[1]] || [20, 100],
+    food: [cost[0].amount[0], cost[0].amount[1]] || [20, 100],
+    gold: [cost[0].amount[0], cost[0].amount[1]] || [20, 100],
   });
 
   const handleCheckBoxChange = (
@@ -56,7 +56,7 @@ const CostsFilter = (): JSX.Element => {
   ): void => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-  const handleSliderChange = (event: any, newValue: number | number[]) => {
+  const handleSliderChange = (event, newValue: number | number[]) => {
     //control the mousemove event unexpected results
     if (event.target.className) {
       if (event.target.className.indexOf("MuiSlider") > -1) {
@@ -86,7 +86,7 @@ const CostsFilter = (): JSX.Element => {
       (item): Cost => {
         return {
           name: item.name,
-          amount: sliderValues[item.name],
+          amount: [sliderValues[item.name][0], sliderValues[item.name][1]],
           enabled: state[item.name],
         };
       }
@@ -126,19 +126,19 @@ const CostsFilter = (): JSX.Element => {
                   control={
                     <div
                       id={`${costItem.name}-slider-context`}
-                      className={cn("slider")}
+                      className={cn("slider", `sl${costItem.name}`)}
                     >
                       <Slider
-                        aria-label={`${costItem.name}-cost-slider-input`}
                         data-testid={`${costItem.name}-slider-input`}
                         aria-valuenow={sliderValues[costItem.name]}
-                        aria-valuetext={`${
-                          costItem.name
-                        } value is ${sliderValues[costItem.name].toString()}`}
-                        value={sliderValues[costItem.name]}
+                        value={[
+                          sliderValues[costItem.name][0],
+                          sliderValues[costItem.name][1],
+                        ]}
                         onChange={handleSliderChange}
                         onChangeCommitted={handleSliderCommit}
-                        aria-labelledby="continuous-slider"
+                        aria-labelledby="range-slider"
+                        valueLabelDisplay="auto"
                         min={0}
                         max={200}
                         title={`${costItem.label}-${
@@ -157,7 +157,9 @@ const CostsFilter = (): JSX.Element => {
                 className={cn("column", "slider-label")}
                 title="Min: 0; Max: 200"
               >
-                {sliderValues[costItem.name]}
+                {`${sliderValues[costItem.name][0]} - ${
+                  sliderValues[costItem.name][1]
+                }`}
               </div>
             </div>
           );

@@ -36,7 +36,7 @@ const UnitDetail = (): JSX.Element => {
   useEffect(() => {
     const element = document.getElementById("unit-detail");
     if (element) {
-      window.scroll(0, element.offsetTop - 200);
+      window.scroll(0, element.offsetTop);
     }
   }, [unitDetail]);
 

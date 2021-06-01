@@ -69,7 +69,7 @@ const DataTable = (): JSX.Element => {
         Number of Records Displayed:{" "}
         <span data-testid="number-of-records">{rows.length}</span>
       </div>
-      <div className={cn("table")}>
+      <div className={cn("table")} data-testid="table">
         <DataGrid
           hideFooterSelectedRowCount
           rows={rows}

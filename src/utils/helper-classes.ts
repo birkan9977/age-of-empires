@@ -25,7 +25,7 @@ export class Slider {
     element: HTMLElement,
     value: number,
     min: number = 0,
-    max: number = 100
+    max: number = 200
   ) {
     const getBoundingClientRect = element.getBoundingClientRect;
     element.getBoundingClientRect = Slider.getBoundingClientRectMock;

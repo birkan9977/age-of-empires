@@ -15,16 +15,22 @@ export default function filterData(units, filtersState) {
     filteredData = filteredData.map((unit) => {
       if (unit.cost) {
         let wood = true;
-        if (unit.cost.hasOwnProperty("Wood") && cost[0].enabled) {
-          wood = unit.cost.Wood <= cost[0].amount;
+        if (unit.cost.Wood && cost[0].enabled) {
+          wood =
+            unit.cost.Wood >= cost[0].amount[0] &&
+            unit.cost.Wood <= cost[0].amount[1];
         }
         let food = true;
-        if (unit.cost.hasOwnProperty("Food") && cost[1].enabled) {
-          food = unit.cost.Food <= cost[1].amount;
+        if (unit.cost.Food && cost[1].enabled) {
+          food =
+            unit.cost.Food >= cost[1].amount[0] &&
+            unit.cost.Food <= cost[1].amount[1];
         }
         let gold = true;
-        if (unit.cost.hasOwnProperty("Gold") && cost[2].enabled) {
-          gold = unit.cost.Gold <= cost[2].amount;
+        if (unit.cost.Gold && cost[2].enabled) {
+          gold =
+            unit.cost.Gold >= cost[2].amount[0] &&
+            unit.cost.Gold <= cost[2].amount[1];
         }
 
         if (wood && food && gold) return unit;

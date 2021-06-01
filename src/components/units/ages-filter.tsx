@@ -21,6 +21,7 @@ const AgesFilter = (): JSX.Element => {
       <h2>Ages</h2>
       <div className={cn("ages-options-container")}>
         <BottomNavigation
+          data-testid="age-nav"
           value={age.selectionIndex || 0}
           onChange={(event, newValue) => {
             dispatch(changeAgeFilter(ages[newValue]));

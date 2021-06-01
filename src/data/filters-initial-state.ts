@@ -8,17 +8,17 @@ export const filtersInitialState: { age: Age; cost: Cost[] } = {
   cost: [
     {
       name: "wood",
-      amount: 20,
+      amount: [20, 100],
       enabled: false,
     },
     {
       name: "food",
-      amount: 20,
+      amount: [20, 100],
       enabled: false,
     },
     {
       name: "gold",
-      amount: 20,
+      amount: [20, 100],
       enabled: false,
     },
   ],

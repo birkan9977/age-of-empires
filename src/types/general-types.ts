@@ -5,7 +5,7 @@ export interface Age {
 
 export interface Cost {
   name: string;
-  amount: number;
+  amount: number[];
   enabled: boolean;
 }
 

@@ -120,7 +120,8 @@ a {
   color: #271a0a;
   transition: all 0.3s ease;
 }
-a:active, alink {
+a:active,
+alink {
   color: #271a0a;
 }
 a:hover {
