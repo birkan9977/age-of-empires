@@ -1,6 +1,6 @@
 import { Age, Cost } from "../types/general-types";
 
-export const initialState: { age: Age; cost: Cost[] } = {
+export const filtersInitialState: { age: Age; cost: Cost[] } = {
   age: {
     title: "All",
     selectionIndex: 0,

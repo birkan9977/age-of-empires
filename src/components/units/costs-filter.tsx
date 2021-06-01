@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../../utils/class-prefix";
 import "../../styles/css/units/costs-filter.css";
-import { connect } from "react-redux";
 import { costsData } from "../../data/costs-data";
 import { withStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
@@ -12,6 +11,8 @@ import Slider from "@material-ui/core/Slider";
 import { findParentId } from "../../utils/helper-functions";
 import { changeCostsFilter } from "../../redux/filters/actions";
 import { Cost } from "../../types/general-types";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks"
+import { InferredDataState } from "../../redux/selectors"
 
 const GreenCheckbox = withStyles({
   root: {
@@ -25,13 +26,9 @@ const GreenCheckbox = withStyles({
 
 const cn = classnames(`${prefix}`);
 
-type Prop = {
-  cost?: Cost | any;
-  changeCostsFilter?: { type: string; payload: {} } | any;
-};
-
-const CostsFilter = (props: Prop): JSX.Element => {
-  const { cost, changeCostsFilter } = props;
+const CostsFilter = (): JSX.Element => {
+  const cost:Cost = useAppSelector((state: InferredDataState) => state.filterReducer.cost) 
+  const dispatch = useAppDispatch()
 
   const [state, setState] = useState<{
     wood: boolean;
@@ -59,7 +56,6 @@ const CostsFilter = (props: Prop): JSX.Element => {
   };
   const handleSliderChange = (event: any, newValue: number | number[]) => {
     //control the mousemove event unexpected results
-    //console.log(event.target.className);
     if (event.target.className) {
       if (event.target.className.indexOf("MuiSlider") > -1) {
         //slider component does not return a specific attribute because of the mouse events
@@ -95,7 +91,7 @@ const CostsFilter = (props: Prop): JSX.Element => {
       }
     );
     //console.log("redux data", costDataForRedux);
-    changeCostsFilter(costDataForRedux);
+    dispatch(changeCostsFilter(costDataForRedux));
   };
 
   useEffect(() => {
@@ -171,9 +167,4 @@ const CostsFilter = (props: Prop): JSX.Element => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { cost } = state.filterReducer;
-  return { cost };
-};
-
-export default connect(mapStateToProps, { changeCostsFilter })(CostsFilter);
+export default CostsFilter;

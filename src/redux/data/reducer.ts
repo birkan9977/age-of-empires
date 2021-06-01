@@ -1,11 +1,10 @@
 import { DATA_UPDATE, ROW_ID, UNIT_DETAIL } from "../action-types";
+import { DataState } from "../../types/general-types";
+import { dataInitialState } from "../../data/data-initial-state";
 
-type ActionRowId = {
-  rowId: number;
-};
-type Action = { type: string; payload: {} | number | ActionRowId | any };
+type Action = { type: string; payload: DataState };
 
-const dataReducer = (state, action: Action) => {
+const dataReducer = (state: DataState = dataInitialState, action: Action) => {
   switch (action.type) {
     case DATA_UPDATE:
       return { ...state, data: action.payload };

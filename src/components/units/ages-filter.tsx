@@ -5,28 +5,23 @@ import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import { agesData as ages } from "../../data/ages-data";
 import { changeAgeFilter } from "../../redux/filters/actions";
-import { connect } from "react-redux";
 import { Age } from "../../types/general-types";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks"
+import { InferredDataState } from "../../redux/selectors"
 
 const cn = classnames(`${prefix}`);
 
-type Prop = {
-  age?: Age | any;
-  changeAgeFilter?: { type: string; payload: {} } | any;
-};
-
-const AgesFilter = (props: Prop): JSX.Element => {
-  const { age, changeAgeFilter } = props;
-
+const AgesFilter = (): JSX.Element => {
+  const age:Age = useAppSelector((state: InferredDataState) => state.filterReducer.age) 
+  const dispatch = useAppDispatch()
   return (
     <div className={cn("ages")}>
       <h2>Ages</h2>
       <div className={cn("ages-options-container")}>
         <BottomNavigation
-          value={age.selectionIndex ?? 0}
+          value={age.selectionIndex || 0} 
           onChange={(event, newValue) => {
-            //setValue(newValue);
-            changeAgeFilter(ages[newValue]);
+            dispatch(changeAgeFilter(ages[newValue]));
           }}
           showLabels
         >
@@ -40,7 +35,6 @@ const AgesFilter = (props: Prop): JSX.Element => {
             );
           })}
         </BottomNavigation>
-        {/*below div is only for testing purposes*/}
         <div className={cn("hidden")}>
           AGE <span data-testid="age-value">{age.title}</span>
         </div>
@@ -49,9 +43,6 @@ const AgesFilter = (props: Prop): JSX.Element => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { age } = state.filterReducer;
-  return { age };
-};
 
-export default connect(mapStateToProps, { changeAgeFilter })(AgesFilter);
+
+export default AgesFilter;

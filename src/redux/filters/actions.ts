@@ -10,7 +10,7 @@ export const changeAgeFilter = (value: Age): FilterAction => {
   return ageFilterAction;
 };
 
-export const changeCostsFilter = (value: Cost): FilterAction => {
+export const changeCostsFilter = (value: Cost[]): FilterAction => {
   const costsFilterAction: FilterAction = {
     type: CHANGE_COST_FILTER,
     payload: value,
