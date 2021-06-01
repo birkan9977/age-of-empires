@@ -89,7 +89,7 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 body {
@@ -97,10 +97,53 @@ body {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.7;
-  color: #000;
+  color: #2e2c2c;
   color: rgba(46, 44, 44, 0.8);
-  background: #fff;
+  background: #f0f5f5;
   background: rgba(240, 245, 245, 0.8);
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: 1.25rem 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin: 1.25rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: #271a0a;
+  transition: all 0.3s ease;
+}
+a:active,
+alink {
+  color: #271a0a;
+}
+a:hover {
+  color: #389844;
+}
+
+/*
+we use a prefix unique to our project to make sure the class names would not clash with other class names to be added later with third party libraries such as bootstrap or material ui
+
+!!!In order to change the class prefix, modify both 'src/utils/class-prefix.js' and 'src/styles/_library.scss'!!!
+usage: '.adsp-01__-<className>'
+*/
+.adsp-01__-main {
+  display: block;
+  margin: 0;
+}
+
+.adsp-01__-app-container {
+  display: block;
+  margin: auto;
+  max-width: 73rem;
+  padding: 10px 0;
 }
 
 /*# sourceMappingURL=app.css.map */

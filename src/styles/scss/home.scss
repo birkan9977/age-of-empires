@@ -1,0 +1,13 @@
+@import "./library";
+
+.#{$prefix}-home {
+  @include flex-column(center, flex-start);
+  .#{$prefix}-image-container {
+    border: none;
+    padding: 10px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

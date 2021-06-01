@@ -1,0 +1,43 @@
+@import "../library";
+
+//ages filter
+.#{$prefix}-ages {
+  width: 100%;
+  margin-bottom: pixelToRem(30);
+  margin-left: $left-margin;
+}
+
+.#{$prefix}-ages-options-container {
+  height: 30px;
+  .MuiBottomNavigation-root {
+    border: 1px solid lighten($nav-link-color, 70%);
+    .#{$prefix}-age-options {
+      border-right: solid 1px lighten($nav-link-color, 70%);
+    }
+
+    :last-child {
+      border-right: none;
+    }
+  }
+
+  @include flex-column(flex-start, flex-start);
+  .MuiBottomNavigationAction-label {
+    font-size: pixelToRem(15) !important;
+    color: lighten($nav-link-color, 20%);
+  }
+
+  .Mui-selected {
+    color: $active-link-color;
+
+    background-color: rgb(229, 238, 238);
+  }
+  .MuiBottomNavigationAction-root {
+    border: solid 1px lighten($nav-link-color, 70%) !important;
+  }
+}
+
+.#{$prefix}-hidden {
+  display: block;
+  position: relative;
+  visibility: hidden;
+}

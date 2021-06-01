@@ -1,0 +1,16 @@
+.adsp-01__-units {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 50px;
+  width: 100%;
+}
+.adsp-01__-units h1 {
+  align-self: center;
+}
+.adsp-01__-units .adsp-01__-data-container {
+  align-self: center;
+}
+
+/*# sourceMappingURL=units.css.map */

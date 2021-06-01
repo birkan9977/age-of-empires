@@ -1,0 +1,32 @@
+@import "./library";
+
+$navbar-height: pixelToRem(90);
+.#{$prefix}-navbar {
+  height: $navbar-height;
+  background-color: $bars-background-color;
+  @include flex-column(center, center);
+  ul {
+    display: flex;
+    background-color: $navbar-background-color;
+    justify-content: flex-end;
+    width: 100%;
+    height: adjust($navbar-height, 80);
+  }
+
+  li {
+    list-style: none;
+    padding: 0 pixelToRem(20);
+    @include flex-column(center, center);
+  }
+
+  a {
+    padding: 0 pixelToRem(5);
+  }
+}
+
+.#{$prefix}-active {
+  color: $active-link-color;
+}
+.#{$prefix}-path {
+  color: darken($active-link-color, 50%);
+}

@@ -1,0 +1,34 @@
+@import "../library";
+.#{$prefix}-table-container {
+  @include flex-column(center, flex-end);
+  padding: 40px;
+  //background-color: aqua;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.#{$prefix}-records-number-text {
+  padding: 15px;
+}
+.#{$prefix}-table {
+  height: 400px;
+  width: 800px;
+}
+.MuiDataGrid-row {
+  cursor: pointer;
+}
+
+.MuiDataGrid-cell,
+.Mui-selected {
+  border: none !important;
+  outline: none !important;
+}
+
+.MuiDataGrid-cell {
+  padding: 0 20px !important;
+}
+
+.MuiDataGrid-columnHeader {
+  padding: 0 20px !important;
+}
