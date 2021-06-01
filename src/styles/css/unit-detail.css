@@ -1,0 +1,44 @@
+.adsp-01__unit-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 30px 50px;
+  width: 100%;
+  height: 100%;
+}
+.adsp-01__unit-detail h1 {
+  align-self: center;
+}
+
+.adsp-01__table-container {
+  width: 100%;
+}
+
+.adsp-01__grid-container {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.adsp-01__paper-col1 {
+  width: 100%;
+  height: 100%;
+  color: rgba(46, 44, 44, 0.8) !important;
+}
+
+.adsp-01__paper-col2 {
+  width: 100%;
+  height: 100%;
+  color: rgba(98, 94, 94, 0.8) !important;
+}
+
+.adsp-01__foor-note {
+  font-size: small;
+  margin-left: 50px;
+}
+
+.MuiGrid-container {
+  width: 100%;
+}
+
+/*# sourceMappingURL=unit-detail.css.map */

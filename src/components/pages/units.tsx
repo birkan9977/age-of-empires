@@ -1,9 +1,9 @@
 import classnames from "@umbrellio/prefix-classnames";
-import { classPrefix as prefix } from "../utils/class-prefix";
-import "../styles/css/units.css";
-import AgesFilter from "./units/ages-filter";
-import CostsFilter from "./units/costs-filter";
-import DataTable from "./units/table";
+import { classPrefix as prefix } from "../../utils/class-prefix";
+import "../../styles/css/units.css";
+import AgesFilter from "../units/ages-filter";
+import CostsFilter from "../units/costs-filter";
+import DataTable from "../units/table";
 const cn = classnames(`${prefix}`);
 
 const Units = () => {

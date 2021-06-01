@@ -1,12 +1,11 @@
 import { all, call, fork, takeEvery, select, put } from "redux-saga/effects";
 import { CHANGE_AGE_FILTER, CHANGE_COST_FILTER } from "../action-types";
-import { FilterAction } from "../../types/general-types";
 import getData from "../../services/service";
 import filterData from "../../services/filter-data";
 import { getFiltersState } from "../selectors";
 import { updateData } from "../data/actions";
 
-function* fetchData(action: FilterAction) {
+function* fetchData() {
   //simulate an api call with delay in milliseconds if preferred: default '0'
   const delay = 0;
   const loadedData = yield call(getData, delay);

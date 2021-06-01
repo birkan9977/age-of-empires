@@ -1,4 +1,4 @@
-import { DATA_UPDATE, ROW_ID } from "../action-types";
+import { DATA_UPDATE, ROW_ID, UNIT_DETAIL } from "../action-types";
 
 export const updateData = (value) => {
   const dataUpdateAction = {
@@ -8,11 +8,20 @@ export const updateData = (value) => {
 
   return dataUpdateAction;
 };
-export const setSelectedRow = (rowId:number) => {
+export const setSelectedRow = (id: number) => {
   const selectedRowAction = {
     type: ROW_ID,
-    payload: rowId,
+    payload: id,
   };
 
   return selectedRowAction;
+};
+
+export const setUnitDetail = (value) => {
+  const unitDetailAction = {
+    type: UNIT_DETAIL,
+    payload: value,
+  };
+
+  return unitDetailAction;
 };

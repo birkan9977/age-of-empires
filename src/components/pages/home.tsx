@@ -1,7 +1,7 @@
-import homeImage from "../assets/home-image.jpg";
+import homeImage from "../../assets/home-image.jpg";
 import classnames from "@umbrellio/prefix-classnames";
-import { classPrefix as prefix } from "../utils/class-prefix";
-import "../styles/css/home.css";
+import { classPrefix as prefix } from "../../utils/class-prefix";
+import "../../styles/css/home.css";
 const cn = classnames(`${prefix}`);
 const Home = () => {
   return (

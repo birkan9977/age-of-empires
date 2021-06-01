@@ -3,9 +3,9 @@ import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../utils/class-prefix";
 import "../styles/css/layout.css";
 import { useState, useEffect } from "react";
-import Home from "./home";
-import Units from "./units";
-import UnitsDetail from "./units-detail"
+import Home from "./pages/home";
+import Units from "./pages/units";
+import UnitDetail from "./pages/unit-detail";
 
 const cn = classnames(`${prefix}`);
 
@@ -16,11 +16,10 @@ const Layout = () => {
     setPage(page);
   };
 
-  
   useEffect(() => {
-    console.log("PAGE", page);
+    //console.log("PAGE", page);
   }, [page]);
-  
+
   return (
     <div className={cn("layout-container")}>
       <header>
@@ -29,13 +28,13 @@ const Layout = () => {
       <main>
         {page === "home" && <Home />}
         {page === "units" && <Units />}
-        {page === "unit-detail" && <UnitsDetail />}
+        {page === "unit-detail" && <UnitDetail />}
       </main>
       <footer className={cn("footer")}>
         <div className={cn("footer-inside")}>
           <small>Designed by Birkan Bilici </small>
           <small>
-            <a href="/units/unit" target="blank">
+            <a href="https://github.com/birkan9977" target="blank">
               Github Link
             </a>
           </small>

@@ -4,7 +4,7 @@ import Layout from "./components/layout";
 import "./styles/css/app.css";
 import { Provider } from "react-redux";
 import { configureStore } from "./redux/store";
-import { BrowserRouter  as Router } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 
 const cn = classnames(`${prefix}`);
 
@@ -13,8 +13,8 @@ const App = () => {
     <Provider store={configureStore()}>
       <div className={cn("main")}>
         <div className={cn("app-container")}>
-        <Router>
-          <Layout />
+          <Router>
+            <Layout />
           </Router>
         </div>
       </div>

@@ -3,21 +3,21 @@ import { connect } from "react-redux";
 import classnames from "@umbrellio/prefix-classnames";
 import { classPrefix as prefix } from "../../utils/class-prefix";
 import "../../styles/css/units/table-data.css";
-import { setSelectedRow } from "../../redux/data/actions"
+import { setSelectedRow } from "../../redux/data/actions";
 import { useHistory } from "react-router-dom";
 
 const cn = classnames(`${prefix}`);
 
 type Row = {
-  id:number;
-  name:string;
-  age:string;
-  cost?:{
-    Wood?:number | null;
-    Food?:Number | null;
-    Gold?:Number | null;
+  id: number;
+  name: string;
+  age: string;
+  cost?: {
+    Wood?: number | null;
+    Food?: Number | null;
+    Gold?: Number | null;
   };
-}
+};
 
 const DataTable = (props) => {
   const { data, setRowId } = props;
@@ -28,7 +28,7 @@ const DataTable = (props) => {
     setRowId(gridRow.row.id);
     history.push("/unit-detail");
   };
-  
+
   const columns = [
     { field: "id", headerName: "id", width: 130 },
     { field: "name", headerName: "Name", width: 200 },
@@ -36,11 +36,10 @@ const DataTable = (props) => {
     { field: "costs", headerName: "Costs", width: 200 },
   ];
 
-  
-  let rows:Row[] = [];
+  let rows: Row[] = [];
 
   if (data) {
-    rows = data.map((dataRow:Row) => {
+    rows = data.map((dataRow: Row) => {
       let row = {
         id: dataRow.id,
         name: dataRow.name,
@@ -49,12 +48,9 @@ const DataTable = (props) => {
       };
       if (dataRow.cost) {
         const costField: string[] = [];
-        if (dataRow.cost.Wood)
-          costField.push(`Wood: ${dataRow.cost.Wood}`);
-        if (dataRow.cost.Food)
-          costField.push(`Food: ${dataRow.cost.Food}`);
-        if (dataRow.cost.Gold)
-          costField.push(`Gold: ${dataRow.cost.Gold}`);
+        if (dataRow.cost.Wood) costField.push(`Wood: ${dataRow.cost.Wood}`);
+        if (dataRow.cost.Food) costField.push(`Food: ${dataRow.cost.Food}`);
+        if (dataRow.cost.Gold) costField.push(`Gold: ${dataRow.cost.Gold}`);
         const costString = costField.join(", ");
         row.costs = costString;
       } else {
@@ -92,8 +88,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setRowId: (rowId:number)=> dispatch(setSelectedRow(rowId))
-  }
-}
+    setRowId: (rowId: number) => dispatch(setSelectedRow(rowId)),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataTable);
