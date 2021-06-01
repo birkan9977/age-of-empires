@@ -33,7 +33,9 @@ type Prop = {
 const UnitDetail = ({ unitDetail }: Prop): JSX.Element => {
   useEffect(() => {
     const element = document.getElementById("unit-detail");
-    window.scroll(0, element!.offsetTop - 200);
+    if (element) {
+      window.scroll(0, element.offsetTop - 200);
+    }
   }, [unitDetail]);
 
   const classes = useStyles();
