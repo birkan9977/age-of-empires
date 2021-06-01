@@ -4,7 +4,7 @@ export const getAge = (state: InferredDataState) => state.filterReducer.age;
 export const getCost = (state) => state.filterReducer.cost;
 export const getDataState = (state) => state.dataReducer.data;
 export const getRowIdState = (state) => state.dataReducer.rowId;
-export const getUnitDetail= (state) => state.dataReducer.unitDetail;
+export const getUnitDetail = (state) => state.dataReducer.unitDetail;
 
 export type InferredDataState = ReturnType<typeof getDataState>;
 export type InferredFilterState = ReturnType<typeof getFiltersState>;
